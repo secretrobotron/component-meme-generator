@@ -1,0 +1,12 @@
+{
+	"ceci-meme-generator": "Meme Generator",
+	"ceci-meme-generator/description": "Displays memes.",
+  "ceci-meme-generator/attributes/image/label": "Image",
+  "ceci-meme-generator/attributes/image/description": "URL for the image to be displayed.",
+  "ceci-meme-generator/attributes/top/label": "Top Text",
+  "ceci-meme-generator/attributes/top/description": "Text to be displayed at the top.",
+  "ceci-meme-generator/attributes/middle/label": "Middle Text",
+  "ceci-meme-generator/attributes/middle/description": "Text to be displayed in the middle.",
+	"ceci-meme-generator/attributes/bottom/label": "Bottom Text",
+	"ceci-meme-generator/attributes/bottom/description": "Text to be displayed at the bottom."
+}

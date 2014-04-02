@@ -1,0 +1,61 @@
+<polymer-element name="ceci-meme-generator" extends="ceci-element" attributes="image top bottom">
+  <template>
+    <link rel="stylesheet" href="component.css">
+    <div id="container" style="background-image: url('{{image}}');">
+      <div id="topText">{{top}}</div>
+      <div id="bottomText">{{bottom}}</div>
+    </div>
+    <shadow></shadow>
+    <script type="text/json" id="ceci-definition">
+      {
+        "name": "Meme Generator",
+        "tags": "meme",
+        "thumbnail": "./thumbnail.png",
+        "description": "Displays memes",
+        "broadcasts": {
+          "url": {
+            "description": "Shareable URL for generated meme",
+            "label": "URL"
+          }
+        },
+        "attributes": {
+          "image": {
+            "description": "URL for the image to be displayed.",
+            "label": "Image",
+            "editable": "text"
+          },
+          "top": {
+            "description": "Text to be displayed at the top.",
+            "label": "Top Text",
+            "editable": "text",
+            "listener": true
+          },
+          "bottom": {
+            "description": "Text to be displayed at the bottom.",
+            "label": "Bottom Text",
+            "editable": "text",
+            "listener": true
+          }
+        }
+      }
+    </script>
+  </template>
+    <script>
+      Polymer("ceci-meme-generator", {
+        image: 'component/mozilla-appmaker/component-meme-generator/serious_cat_is_serious.jpg',
+        top: 'Serious cat',
+        middle: '',
+        bottom: 'is serious.',
+        ready: function() {
+          this.super();
+        },
+        attributeChanged: function () {
+          var url = 'https://secretrobotron.makes.org/thimble/LTE1NDg3NDY3NTI=/make-a-meme-from-a-url?' +
+            'bottom=' + escape(this.bottom) +
+            '&top=' + escape(this.top) +
+            '&img=' + escape(this.image);
+          this.broadcast('url', url);
+        }
+      });
+    </script>
+</polymer-element>
